@@ -12,7 +12,7 @@ Simple Chat App that allows users to create and join rooms.
 
 ## Technology Stack
 
-## Framework 
+### Framework 
 * Express (middleware manager)
 
 ### Front End
