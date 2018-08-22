@@ -10,7 +10,9 @@ require('./auth')();
 // Create an IO Server instance
 let ioServer = app => {
 	app.locals.chatrooms = [];
+	// creates raw http server then binds express app to it
 	const server = require('http').Server(app);
+	// bind io, but returns server
 	const io = require('socket.io')(server);
 	io.set('transports', ['websocket']);
 	let pubClient = redis(config.redis.port, config.redis.host, {

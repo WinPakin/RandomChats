@@ -3,6 +3,8 @@ const h = require('../helpers');
 const passport = require('passport');
 const config = require('../config');
 
+// Middleware handles all the routing
+
 module.exports = () => {
 	let routes = {
 		'get': {

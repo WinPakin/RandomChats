@@ -4,7 +4,21 @@ const config = require('../config');
 const h = require('../helpers');
 const logger = require('../logger');
 const FacebookStrategy = require('passport-facebook').Strategy;
-const TwitterStrategy = require('passport-twitter').Strategy;
+
+/*
+	* Passport "driver" to different authentification services
+	* Takes in FB App ID and Secret 
+	* If Successful Redirects, FB registered callback 
+	* middle makes users available as req.user
+	* logout deletes req.user 
+	* Strategy takes in config and process. 
+	* 
+		1.Initilize sessions
+		2. Init Passport before passport sessions.
+		3. Init Passport Sessions, passport session binds to regular sessions. 
+*/
+
+
 
 module.exports = () => {
 	passport.serializeUser((user, done) => {
@@ -36,5 +50,4 @@ module.exports = () => {
 	}
 
 	passport.use(new FacebookStrategy(config.fb, authProcessor));
-	passport.use(new TwitterStrategy(config.twitter, authProcessor));
 }

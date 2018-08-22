@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ChatCat - Rooms</title>
-	<link rel="stylesheet" href="/css/roomsStyles.css">
+	<title>Ugly Chat | Rooms</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
@@ -18,7 +20,7 @@
 			let roomsListDiv = $('#roomsListUL');
 			let listStr = '';
 			for(let cat of chatrooms) {
-				listStr += `<a href="/chat/${cat.roomID}"><li>${cat.room}</li></a>`;
+				listStr += `<a href="/chat/${cat.roomID}"><li class="list-group-item">${cat.room}</li></a>`;
 			}
 			roomsListDiv.html('').append(listStr);
 		}
@@ -41,25 +43,25 @@
 	</script>
 </head>
 <body>
-	<div class="container">
-		<div class="titlePanel">
-			<h1>ChatCAT | Select or Create a Chatroom</h1>
+		<div class="alert alert-primary">
+			<h1>Ugly Chat </h1>
+			<h3> Join a Conversation </h3>
+			<h3> Can't find an intersting Conversation? Create one! </h3>
 		</div>
-		<div class="controls">
+		<div class="alert alert-secondary">
 			<div class="userPicHolder"><img src="<%= user.profilePic %>" alt="<%= user.fullName %>"></div>
 			<p class="userName"><%= user.fullName %></p>
-			<a href="/logout" id="logOutBtn">Logout</a>
+			<a href="/logout" class="btn btn-primary" id="logOutBtn">Logout</a>
 		</div>
-		<div class="controls">
+		<div class="alert alert-success">
 			<input type="text" name="roomName" placeholder="Create a new Chatroom">
-			<a href="#" id="createBtn">Create</a>
+			<a href="#" class="btn btn-primary" id="createBtn">Create</a>
 		</div>
-		<div class="roomsListDiv">
-			<ul class="roomsList" id="roomsListUL">
+		<div class="alert alert-danger">
+			<ul class="list-group" id="roomsListUL">
 			<!-- Loop list items here -->
 				
 			</ul>
 		</div>
-	</div>
 </body>
 </html>

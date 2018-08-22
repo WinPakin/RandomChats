@@ -3,6 +3,18 @@ const config = require('../config');
 const logger = require('../logger');
 const Mongoose = require('mongoose').connect(config.dbURI);
 
+/*
+	* MongoDB Document Oriented
+	* Terminology
+		Table => Collection
+		Tuple/Row => Document
+		Column => Field 
+	* Mongoose = Mongo DB driver 
+		1. connects to mongolab
+		2. gives mongoDB structure
+*/
+
+
 // Log an error if the connection fails
 Mongoose.connection.on('error', error => {
 	logger.log('error', 'Mongoose connection error: ' + error);

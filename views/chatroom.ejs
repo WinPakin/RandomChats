@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>ChatCat - <%= room %></title>
-	<link rel="stylesheet" href="/css/chatroomStyles.css">
+	<title>Ugly Chat | <%= room %></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script src="/js/jquery-2.1.4.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="https://widget.cloudinary.com/global/all.js"></script>
@@ -101,34 +103,34 @@
 	</script>
 </head>
 <body>
-	<div class="container">
-		<div class="titlePanel">
+		<div class="titlePanel alert alert-primary">
 			<h1>ChatCAT | <%= room %></h1>
 		</div>
-		<div class="controls">
+		<div class="alert alert-secondary">
 			<div class="userPicHolder"><img src="<%= user.profilePic %>" alt="<%= user.fullName %>"></div>
 			<p class="userName"><%= user.fullName %></p>
-			<a href="/rooms" id="roomsBtn">Rooms</a>
-			<a href="/logout" id="logOutBtn">Logout</a>
+			<a class="btn btn-primary" href="/rooms" id="roomsBtn">Rooms</a>
+			<a class="btn btn-primary" href="/logout" id="logOutBtn">Logout</a>
 		</div>
-		<div class="chatListDiv">
-			<div class="chatMessagesPanel">
+		<div class="chatListDiv alert alert-success">
+			<div class="chatUsers alert alert-primary">
+			<!-- Loop this for chat users -->
+				
+			<!-- loop end -->
+			</div>
+
+			<div class="chatMessagesPanel alert alert-secondary">
+				<div class="typePanel">
+					<input type="text" name="userInput" placeholder="Type here and press enter">
+					<a href="#" id="uploadFile" class="fileUploadBtn">Photo</a>
+				</div>
 				<div class="chatMessages">
 				<!-- Loop this for chat messages -->
 					
 				<!-- loop end -->
 				</div>
-				<div class="typePanel">
-					<input type="text" name="userInput" placeholder="Type here and press enter">
-					<a href="#" id="uploadFile" class="fileUploadBtn">Photo</a>
-				</div>
 			</div>
-			<div class="chatUsers">
-			<!-- Loop this for chat users -->
-				
-			<!-- loop end -->
-			</div>
+
 		</div>
-	</div>
 </body>
 </html>

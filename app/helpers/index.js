@@ -3,6 +3,8 @@ const router = require('express').Router();
 const db = require('../db');
 const crypto = require('crypto');
 
+// Utility folder where everything is stored.
+
 // Iterate through the routes object and mount the routes
 let _registerRoutes = (routes, method) => {
 	for(let key in routes) {
