@@ -12,6 +12,8 @@ Simple Chat App that allows users to create and join rooms.
 
 ## Technology Stack
 
+![](./tech-stack.jpg)
+
 ### Framework 
 * Express (middleware manager)
 
