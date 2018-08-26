@@ -60,3 +60,8 @@ Simple Chat App that allows users to create and join rooms.
 * **Morgan**   
 	* Logs HTTP requests.
 
+## Credits
+
+Sachin Bhatnagar
+
+
